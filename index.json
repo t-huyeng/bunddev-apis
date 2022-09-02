@@ -151,8 +151,7 @@
   },
   {
     "name": "Hilfsmittel-API",
-    "office": "GKV-Spitzenverband",
-    "description": "API des GKV-Spitzenverbands zu allen Hilfsmitteln, die unter die Leistungspflicht der Kassen fallen",
+    "description": null,
     "documentationURL": null,
     "githubURL": "https://github.com/bundesAPI/hilfsmittel-api",
     "rawOpenAPI": "https://raw.githubusercontent.com/bundesAPI/hilfsmittel-api/main/openapi.yaml"
@@ -207,8 +206,7 @@
   },
   {
     "name": "Marktdatenstammregister API",
-    "office": "Bundesnetzagentur",
-    "description": "Das Marktstammdatenregister ist das Register für den deutschen Strom- und Gasmarkt, abgekürzt MaStR",
+    "description": null,
     "documentationURL": null,
     "githubURL": "https://github.com/bundesAPI/marktstammdaten-api",
     "rawOpenAPI": "https://raw.githubusercontent.com/bundesAPI/marktstammdaten-api/main/openapi.yaml"
@@ -231,8 +229,7 @@
   },
   {
     "name": "Wasserstraßen- und Schifffahrtsverwaltung: Pegel-Online API",
-    "office": "WSV",
-    "description": "Pegelstände der Messstellen des bundesweiten Messstellennetzes der Wasserstraßen- und Schifffahrtsverwaltung des Bundes.",
+    "description": null,
     "documentationURL": null,
     "githubURL": "https://github.com/bundesAPI/pegel-online-api",
     "rawOpenAPI": "https://raw.githubusercontent.com/bundesAPI/pegel-online-api/main/openapi.yaml"
