@@ -89,6 +89,7 @@
   },
   {
     "name": "Deutsche Digitale Bibliothek REST API",
+    "office": "Stiftung Preußischer Kulturbesitz",
     "description": "Deutsche Digitale Bibliothek REST API",
     "documentationURL": null,
     "githubURL": "https://github.com/bundesAPI/ddb-api",
@@ -231,10 +232,10 @@
     "rawOpenAPI": "https://raw.githubusercontent.com/bundesAPI/nina-api/main/openapi.yaml"
   },
   {
-    "name": "Wasserstraßen- und Schifffahrtsverwaltung: Pegel-Online API",
-    "office": "WSV",
+    "name": "Pegel-Online API",
+    "office": "Wasserstraßen- und Schifffahrtsverwaltung",
     "description": "Pegelstände der Messstellen des bundesweiten Messstellennetzes der Wasserstraßen- und Schifffahrtsverwaltung des Bundes.",
-    "documentationURL": null,
+    "documentationURL": "",
     "githubURL": "https://github.com/bundesAPI/pegel-online-api",
     "rawOpenAPI": "https://raw.githubusercontent.com/bundesAPI/pegel-online-api/main/openapi.yaml"
   },
