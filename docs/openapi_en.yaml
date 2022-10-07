@@ -66,3 +66,8 @@ components:
             nullable: true
             example: https://raw.githubusercontent.com/bundesAPI/abfallnavi-api/main/openapi.yaml
             description: raw OpenAPI specification
+          pypiURL:
+            type: string
+            nullable: true
+            example: https://pypi.org/project/de-abfallnav
+            description: pypi URL
