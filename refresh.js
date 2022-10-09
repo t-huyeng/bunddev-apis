@@ -56,7 +56,7 @@ const main = async () => {
   })
 
   // write list back
-  await fs.writeFile('./index.json', JSON.stringify([...newList, ...externals], null, 2), { encoding: 'utf-8' })
+  await fs.writeFile('./apis/index.json', JSON.stringify([...newList, ...externals], null, 2), { encoding: 'utf-8' })
 }
 
 main()
