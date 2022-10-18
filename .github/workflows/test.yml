@@ -15,10 +15,9 @@ jobs:
           node-version: 16
           cache: "npm"
       - run: npm install
-      - run: git status
       - name: Refresh list
         run: node refresh.js
-      - name: Sow git diff of index.json to main
+      - name: Show git diff of index.json to main
         run: git diff origin/main --color -- index.json | cat
-      - name: Sow git diff of index.json to Bot-create-pull-request
+      - name: Show git diff of index.json to Bot-create-pull-request
         run: git diff origin/create-pull-request/patch --color -- index.json | cat
