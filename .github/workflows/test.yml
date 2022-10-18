@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: ""
+          fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -19,6 +19,6 @@ jobs:
       - name: Refresh list
         run: node refresh.js
       - name: Sow git diff of index.json to main
-        run: git diff origin/main --color index.json | cat
+        run: git diff main --color index.json | cat
       - name: Sow git diff of index.json to Bot-create-pull-request
-        run: git diff origin/create-pull-request/patch --color index.json | cat
+        run: git diff create-pull-request/patch --color index.json | cat
