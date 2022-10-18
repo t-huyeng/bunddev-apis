@@ -16,9 +16,10 @@ jobs:
           cache: "npm"
       - run: npm install
       - run: git status
+      - run: git branch -l |cat
       - name: Refresh list
         run: node refresh.js
       - name: Sow git diff of index.json to main
-        run: git diff main --color index.json | cat
+        run: git diff origin/main --color -- index.json | cat
       - name: Sow git diff of index.json to Bot-create-pull-request
-        run: git diff create-pull-request/patch --color index.json | cat
+        run: git diff create-pull-request/patch --color -- index.json | cat
