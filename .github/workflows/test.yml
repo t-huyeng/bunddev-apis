@@ -1,0 +1,24 @@
+name: Test refresh API list
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test-refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: ""
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "npm"
+      - run: npm install
+      - run: git status
+      - name: Refresh list
+        run: node refresh.js
+      - name: Sow git diff of index.json to main
+        run: git diff origin/main --color index.json | cat
+      - name: Sow git diff of index.json to Bot-create-pull-request
+        run: git diff origin/create-pull-request/patch --color index.json | cat
