@@ -14,10 +14,10 @@ const main = async () => {
 
     // break on empty list
     if (data.length === 0) empty = true
-  
+
     // only check repos that end in "-api"
     const repos = data.filter((repo) => repo.name.endsWith('-api'))
-  
+
     const result = await Promise.all(repos.map(async (repo) => {
       const rawOpenAPI = `https://raw.githubusercontent.com/bundesAPI/${repo.name}/main/openapi.yaml`
 
@@ -27,27 +27,34 @@ const main = async () => {
       const { data: rawRepoData } = await axios.get(rawOpenAPI)
 
       var package_name = null;
-    try {
-           const { data: rawPyprojectTomlData } = await axios.get(rawPyprojectToml)
-           const tomlData = toml.parse(rawPyprojectTomlData);
-           package_name = tomlData["tool"]["poetry"]["name"]
+      try {
+        const { data: rawPyprojectTomlData } = await axios.get(rawPyprojectToml)
+        const tomlData = toml.parse(rawPyprojectTomlData);
+        package_name = tomlData["tool"]["poetry"]["name"]
 
-    } catch (exception) {
-      console.log(`Error fetching pypi url for ${repo.name}`);
-    }
+      } catch (exception) {
+        console.log(`Error fetching pypi url for ${repo.name}`);
+      }
 
       const repoData = yaml.load(rawRepoData)
-     var result = {
+      try {
+        servers = repoData.servers.map((server) => server.url)
+      }
+      catch {
+        servers = []
+      }
+      var result = {
         name: repoData.info.title,
         office: repoData.info['x-office'],
         description: repo.description,
         documentationURL: repo.homepage,
         githubURL: repo.html_url,
         rawOpenAPI: rawOpenAPI,
+        serverURLs: servers,
       }
 
-       if (package_name) result["pypiURL"] = `https://pypi.org/project/${package_name}`
-       else result["pypiURL"] = null
+      if (package_name) result["pypiURL"] = `https://pypi.org/project/${package_name}`
+      else result["pypiURL"] = null
 
 
       return result
